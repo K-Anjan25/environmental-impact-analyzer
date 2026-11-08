@@ -285,10 +285,9 @@ button, input, textarea { font: inherit; }
   to { transform: translateX(12px); }
 }
 
-/* Cohesive focus: no heavy boxes on inputs, the field border carries the state */
-/* Focus rings for inputs come from neo-theme.css (outline removed here so keyboard focus stays visible). */
-.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline { border-color: var(--solar-emerald) !important; border-width: 1.5px; box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.1); }
-.MuiOutlinedInput-root { transition: box-shadow 200ms ease; }
+/* Focus uses one emerald field border; the shared theme adds a forest ring for keyboard focus. */
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline { border-color: var(--solar-emerald) !important; border-width: 2px; box-shadow: none; }
+.MuiOutlinedInput-root { transition: border-color 180ms ease; }
 
 
 /* Landing page: EcoImpact Lab hero with curved white panel and painted landscape */

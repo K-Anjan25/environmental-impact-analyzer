@@ -46,4 +46,19 @@ describe('shared Solarpunk visual system', () => {
     expect(solar).toContain('border-radius: var(--radius-pill) !important;');
     expect(solar).toContain('border-radius: 50% !important;');
   });
+
+  it('gives text fields one keyboard-focus ring and keeps catalog figures legible', () => {
+    expect(solar).toContain('body :focus-visible { outline: 3px solid var(--solar-forest) !important;');
+    expect(solar).toContain('body .MuiOutlinedInput-root:has(:focus-visible)');
+    expect(solar).toContain('body .MuiOutlinedInput-root :focus-visible {');
+    expect(solar).toContain('outline: none !important;');
+    expect(solar).toContain('body:has(.nb-home) .nb-home .nb-stat .nb-stat-value');
+    expect(solar).toContain('color: var(--solar-forest) !important;');
+    expect(solar).toContain('width: 44px !important;');
+    expect(solar).toContain('min-height: 44px !important;');
+    expect(solar).toContain('background: var(--solar-danger-soft) !important;');
+    expect(solar).toContain('border: 2px solid var(--solar-danger) !important;');
+    expect(solar).toContain('body .admin-danger {');
+    expect(solar).toContain('color: var(--solar-danger) !important;');
+  });
 });

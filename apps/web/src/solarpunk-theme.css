@@ -11,6 +11,8 @@
   --solar-text: #24332B;
   --solar-muted: #58685E;
   --solar-line: #D8E4DB;
+  --solar-danger: #A63D40;
+  --solar-danger-soft: #FCEDEC;
   --solar-shadow: 0 12px 32px rgba(27, 67, 50, 0.075);
   --solar-shadow-hover: 0 16px 38px rgba(27, 67, 50, 0.12);
   --nb-paper: var(--solar-bg);
@@ -94,7 +96,7 @@ body :is(p, li, dd, dt, label, small, span) { color: inherit; }
 body .MuiSvgIcon-root { color: currentColor; }
 body a { color: var(--solar-emerald); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 body a:hover { color: var(--solar-forest); }
-body :focus-visible { outline: 3px solid var(--solar-gold) !important; outline-offset: 3px; }
+body :focus-visible { outline: 3px solid var(--solar-forest) !important; outline-offset: 3px; }
 
 /* Shared shell */
 body .site-layout,
@@ -388,7 +390,18 @@ body .calculator-page .calc-material-row {
   transition: border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
 }
 body .calculator-page .calc-material-row:focus-within { border-color: #91B49C !important; box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.08); }
-body .calculator-page .calc-remove { width: 40px; height: 40px; margin-top: 4px; }
+body .calculator-page .calc-remove {
+  position: static !important;
+  inset: auto !important;
+  width: 44px !important;
+  min-width: 44px !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  margin: 0 !important;
+  padding: 8px !important;
+  align-self: start;
+  justify-self: end;
+}
 body .calculator-page .calc-profile-suggestion {
   border: 1px solid #D8E4DB !important;
   border-left: 4px solid var(--solar-emerald) !important;
@@ -594,8 +607,14 @@ body .step-number { border: 1px solid var(--solar-line) !important; border-radiu
   body .calculator-page .calc-product-grid > :first-child,
   body .calculator-page .calc-product-grid > :nth-child(2),
   body .calculator-page .calc-product-grid > :nth-child(3) { grid-column: 1 / -1; }
-  body .calculator-page .calc-material-row { grid-template-columns: minmax(0, 1fr); }
-  body .calculator-page .calc-remove { justify-self: end; margin-top: 0; }
+  body .calculator-page .calc-material-row { grid-template-columns: minmax(0, 1fr); padding: 60px 16px 16px !important; }
+  body .calculator-page .calc-remove {
+    position: absolute !important;
+    top: 8px !important;
+    right: 8px !important;
+    inset: 8px 8px auto auto !important;
+    justify-self: auto;
+  }
   body .calculator-page .result-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   body .calculator-page .process-impact-figures { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   body .calculator-page .calc-card.MuiPaper-root,
@@ -652,4 +671,77 @@ body :is(.MuiIconButton-root:not(.site-menu-button), .carousel-dot, .post-pages 
 }
 body:has(.nb-home) .nb-home .nb-spec-head {
   border-radius: var(--radius-card) var(--radius-card) 0 0 !important;
+}
+
+/* Input focus has one state: jade border for focus, forest ring for keyboard focus. */
+body .MuiOutlinedInput-root.Mui-focused,
+body .MuiInputBase-root.Mui-focused {
+  box-shadow: none !important;
+}
+body .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border: 2px solid var(--solar-emerald) !important;
+  box-shadow: none !important;
+}
+body .MuiOutlinedInput-root:focus-visible,
+body .MuiOutlinedInput-root:has(:focus-visible) {
+  outline: 3px solid var(--solar-forest) !important;
+  outline-offset: 2px !important;
+  box-shadow: none !important;
+}
+body .MuiOutlinedInput-root :focus-visible {
+  outline: none !important;
+  outline-offset: 0 !important;
+}
+
+/* Catalog statistic hierarchy: labels and notes are secondary; figures are always forest on every tint. */
+body:has(.nb-home) .nb-home .nb-stat dt { color: var(--solar-muted) !important; }
+body:has(.nb-home) .nb-home .nb-stat .nb-stat-value {
+  display: block;
+  color: var(--solar-forest) !important;
+  font-variant-numeric: tabular-nums;
+  text-wrap: nowrap;
+}
+body:has(.nb-home) .nb-home .nb-stat .nb-stat-note { color: var(--solar-muted) !important; }
+
+/* Remove-material affordance: consistent 44px target, separate desktop grid column, top-right only on mobile. */
+body .calculator-page .calc-remove {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  color: var(--solar-forest) !important;
+  border: 1px solid var(--solar-line) !important;
+  background: var(--solar-surface) !important;
+  box-shadow: var(--solar-shadow-sm) !important;
+}
+body .calculator-page .calc-remove:hover:not(.Mui-disabled) {
+  color: var(--solar-danger) !important;
+  border-color: #E9C9C4 !important;
+  background: var(--solar-danger-soft) !important;
+}
+body .calculator-page .calc-remove .MuiSvgIcon-root { font-size: 22px; }
+
+/* Error remains distinct from focus: invalid fields keep the semantic red border and message. */
+body .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline,
+body .MuiOutlinedInput-root.Mui-error:hover .MuiOutlinedInput-notchedOutline,
+body .MuiOutlinedInput-root.Mui-error.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border: 2px solid var(--solar-danger) !important;
+}
+body .MuiInputLabel-root.Mui-error,
+body .MuiFormLabel-root.Mui-error,
+body .MuiFormHelperText-root.Mui-error {
+  color: var(--solar-danger) !important;
+}
+
+/* Destructive admin actions stay visibly distinct from normal emerald actions. */
+body .admin-danger {
+  border-color: #E9C9C4 !important;
+  background: var(--solar-danger-soft) !important;
+  color: var(--solar-danger) !important;
+  box-shadow: none !important;
+}
+body .admin-danger:hover:not(:disabled):not(.Mui-disabled) {
+  border-color: var(--solar-danger) !important;
+  background: var(--solar-danger) !important;
+  color: #FFFFFF !important;
 }

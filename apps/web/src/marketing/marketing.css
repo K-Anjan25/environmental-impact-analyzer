@@ -66,8 +66,8 @@
 
 /* Form fields: the Material UI wrapper carries the 2px jade ring, because the global stylesheet
    removes the native outline from the inner input. */
-.site-layout-landing .marketing .MuiOutlinedInput-root.Mui-focused { outline: 2px solid var(--accent-primary); outline-offset: 2px; }
-.site-layout-landing .marketing .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline { border-color: var(--accent-primary) !important; border-width: 1px; }
+.site-layout-landing .marketing .MuiOutlinedInput-root.Mui-focused { outline: none; }
+.site-layout-landing .marketing .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline { border-color: var(--solar-emerald) !important; border-width: 2px; }
 
 /* Form labels and helper text: AAA on both paper and ecru */
 /* Overrides the global form-label rule (styles.css) for landing forms only. */

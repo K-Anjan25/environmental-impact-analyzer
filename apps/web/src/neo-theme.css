@@ -155,8 +155,8 @@ a { color: var(--solar-forest); text-decoration-thickness: 2px; text-underline-o
 /* Inputs */
 .MuiOutlinedInput-root { border-radius: 8px !important; background: var(--nb-white) !important; }
 .MuiOutlinedInput-notchedOutline { border: 1px solid var(--solar-line) !important; }
-.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline { border-width: 3px !important; }
-.MuiOutlinedInput-root.Mui-focused { box-shadow: var(--solar-shadow-sm); }
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline { border-width: 2px !important; }
+.MuiOutlinedInput-root.Mui-focused { box-shadow: none !important; }
 .MuiFormLabel-root, .MuiInputLabel-root { color: var(--solar-forest) !important; font-weight: 700; }
 .MuiFormHelperText-root { color: var(--solar-text) !important; }
 .MuiSelect-icon, .MuiSvgIcon-root { color: var(--solar-forest); }
@@ -564,7 +564,7 @@ summary {
   box-shadow: none !important;
 }
 .MuiOutlinedInput-root.Mui-focused {
-  box-shadow: var(--solar-shadow-sm) !important;
+  box-shadow: none !important;
 }
 .post-card:hover,
 .post-card:focus-within,
@@ -580,8 +580,9 @@ summary {
 /* Focused fields use the accessible forest/emerald focus treatment. */
 .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,
 .MuiOutlinedInput-root.Mui-focused:hover .MuiOutlinedInput-notchedOutline {
-  border-color: var(--solar-forest) !important;
-  border-width: 3px !important;
+  border-color: var(--solar-emerald) !important;
+  border-width: 2px !important;
+  box-shadow: none !important;
 }
 .MuiInputLabel-root.Mui-focused,
 .MuiFormLabel-root.Mui-focused {
@@ -719,7 +720,7 @@ summary {
   outline-offset: 2px;
 }
 .MuiOutlinedInput-root.Mui-focused {
-  box-shadow: 0 0 0 3px var(--nb-gold);
+  box-shadow: none;
 }
 
 /* ---- Calculator layout: tab-style navigation, 12-column grid, accordion, button hierarchy ---- */
