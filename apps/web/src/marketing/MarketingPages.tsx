@@ -72,11 +72,9 @@ export function MethodPage() {
         <ol className="step-list">
           {METHOD_STEPS.map((step, i) => (
             <li key={step.title} className="step-item">
-              <Reveal delay={i * 60}>
-                <span className="step-number" aria-hidden="true">{i + 1}</span>
-                <h3>{step.title}</h3>
-                <p>{step.body}</p>
-              </Reveal>
+              <span className="step-number" aria-hidden="true">{i + 1}</span>
+              <h3>{step.title}</h3>
+              <p>{step.body}</p>
             </li>
           ))}
         </ol>

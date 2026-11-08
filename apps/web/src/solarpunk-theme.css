@@ -584,7 +584,7 @@ body .pricing-note { background: var(--solar-gold-soft) !important; color: #5745
 body .error-summary { background: #FCEDEC !important; color: #762E30 !important; }
 body .legal-body code,
 body .legal-body pre { border: 1px solid var(--solar-line) !important; border-radius: 8px !important; background: var(--solar-surface-soft) !important; color: var(--solar-forest) !important; }
-body .step-number { border: 1px solid var(--solar-line) !important; border-radius: 50% !important; background: var(--solar-emerald-soft) !important; color: var(--solar-forest) !important; }
+body .step-number { border: 1px solid var(--solar-forest) !important; border-radius: 50% !important; background: var(--solar-forest) !important; color: #FFFFFF !important; font-weight: 800; }
 
 @keyframes solar-value-enter {
   from { opacity: 0.55; transform: translateY(4px); }
@@ -744,4 +744,38 @@ body .admin-danger:hover:not(:disabled):not(.Mui-disabled) {
   border-color: var(--solar-danger) !important;
   background: var(--solar-danger) !important;
   color: #FFFFFF !important;
+}
+
+/* Landing use-case cards: no vertical stagger, no track overflow, and numbers at readable contrast. */
+body:has(.nb-home) .nb-home .nb-cases {
+  width: 100%;
+  min-width: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+}
+body:has(.nb-home) .nb-home .nb-case {
+  width: 100%;
+  min-width: 0;
+  transform: none !important;
+  overflow-wrap: anywhere;
+}
+body:has(.nb-home) .nb-home .nb-case-num {
+  display: grid;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 1px solid var(--solar-forest) !important;
+  border-radius: 50% !important;
+  background: var(--solar-forest) !important;
+  color: #FFFFFF !important;
+  font-variant-numeric: tabular-nums;
+}
+body:has(.nb-home) .nb-home .nb-case h3 { color: var(--solar-forest) !important; }
+body:has(.nb-home) .nb-home .nb-case p { color: var(--solar-text) !important; }
+@media (max-width: 980px) {
+  body:has(.nb-home) .nb-home .nb-cases { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  body:has(.nb-home) .nb-home .nb-cases { grid-template-columns: minmax(0, 1fr); }
 }

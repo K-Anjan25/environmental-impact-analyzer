@@ -49,7 +49,7 @@
 }
 .site-layout-landing .landing-footer :is(a, button):focus-visible { outline-color: var(--solar-forest); }
 
-.marketing { max-width: 1180px; margin: 0 auto; padding: 0 24px; color: var(--ink); }
+.marketing { width: min(100%, 1180px); max-width: 1180px; box-sizing: border-box; margin: 0 auto; padding: 0 24px; color: var(--ink); }
 .marketing .section { padding: clamp(3rem, 6vw, 6rem) 0; }
 .marketing .section-alt, .marketing .cta-band {
   background: var(--bg-surface); margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
@@ -125,12 +125,11 @@
 .pricing-note { margin: 14px 0 0; padding: 12px 14px; border-radius: 12px; background: #fbeee6; color: #6b3416; border: 1px solid #ebc3a9; font-size: 14px; }
 
 /* Method */
-.step-list { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; counter-reset: none; }
-.step-item { background: var(--paper); box-shadow: var(--shadow-card); border-radius: 16px; padding: 22px; }
-.step-item > div { height: 100%; }
-.step-number { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--forest); color: #fff; font-weight: 800; }
-.step-item h3 { margin: 14px 0 8px; font-size: 1.05rem; color: var(--ink); }
-.step-item p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--muted); }
+.step-list { width: 100%; min-width: 0; list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: 20px; counter-reset: none; }
+.step-item { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; background: var(--paper); box-shadow: var(--shadow-card); border-radius: 20px; padding: clamp(18px, 2vw, 24px); overflow-wrap: anywhere; }
+.step-number { display: inline-grid; flex: 0 0 40px; place-items: center; width: 40px; height: 40px; border: 1px solid var(--solar-forest); border-radius: 50%; background: var(--solar-forest); color: #FFFFFF; font-size: 15px; line-height: 1; font-weight: 800; font-variant-numeric: tabular-nums; }
+.step-item h3 { margin: 16px 0 8px; font-size: 1.1rem; line-height: 1.25; color: var(--solar-forest); }
+.step-item p { margin: 0; font-size: 14px; line-height: 1.6; color: var(--solar-text); overflow-wrap: anywhere; }
 .source-list { margin: 0 0 16px; padding-left: 20px; line-height: 1.8; }
 .marketing a:not(.landing-button) { color: var(--forest-dark); }
 

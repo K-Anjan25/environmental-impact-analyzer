@@ -47,6 +47,17 @@ describe('shared Solarpunk visual system', () => {
     expect(solar).toContain('border-radius: 50% !important;');
   });
 
+  it('keeps landing use-case cards aligned and their numbered markers readable', () => {
+    const landing = read('./marketing/neo.css');
+    expect(landing).toContain('grid-template-columns: repeat(3, minmax(0, 1fr))');
+    expect(landing).not.toContain('transform: translateY(20px)');
+    expect(solar).toContain('body:has(.nb-home) .nb-home .nb-cases');
+    expect(solar).toContain('body:has(.nb-home) .nb-home .nb-case-num');
+    expect(solar).toContain('color: #FFFFFF !important;');
+    expect(solar).toContain('grid-template-columns: repeat(2, minmax(0, 1fr));');
+    expect(solar).toContain('grid-template-columns: minmax(0, 1fr);');
+  });
+
   it('gives text fields one keyboard-focus ring and keeps catalog figures legible', () => {
     expect(solar).toContain('body :focus-visible { outline: 3px solid var(--solar-forest) !important;');
     expect(solar).toContain('body .MuiOutlinedInput-root:has(:focus-visible)');
