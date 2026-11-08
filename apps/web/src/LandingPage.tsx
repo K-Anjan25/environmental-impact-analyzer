@@ -8,11 +8,9 @@ import { postHref } from './router';
 import './marketing/neo.css';
 
 /*
- * Home page, rebuilt in a Neo-Brutalist style: bold colour blocks, thick black borders, hard offset
- * shadows, large type, and deliberately asymmetric layouts. The editorial layout stays still; only
- * controls get brief, reduced-motion-aware tactile feedback. No canvas or image assets. Sections,
- * top to bottom: hero, the catalog numbers, three feature panels, use cases, latest posts, and a
- * closing call to action.
+ * Solarpunk home page with a warm-light canvas, forest/emerald actions, restrained solar-gold
+ * accents, and rounded data panels. Sections run from the hero and catalog summary through feature
+ * panels, use cases, latest posts, and a closing call to action.
  */
 
 /** The 16 EF 3.1 indicator codes, shown as tiles in the hero specimen. Order follows the method page. */
@@ -20,7 +18,7 @@ const INDICATOR_CODES = [
   'ACD', 'ETF', 'FRU', 'FWE', 'GHG', 'HTC', 'HTN', 'IOR',
   'LDU', 'MRU', 'OZD', 'PCO', 'PMA', 'SWE', 'TRE', 'WTU',
 ];
-const CASE_TONES = ['nb-tone-yellow', 'nb-tone-lilac', 'nb-tone-pink'];
+const CASE_TONES = ['nb-tone-gold', 'nb-tone-sage', 'nb-tone-warm'];
 
 function latestPostOf(type: PostType): Post | undefined {
   return publishedPosts(type)[0];
@@ -86,17 +84,17 @@ export default function LandingPage() {
             What the bundled catalog holds
           </h2>
           <dl className="nb-stat-grid">
-            <div className="nb-stat nb-tone-yellow">
+            <div className="nb-stat nb-tone-gold">
               <dt>Published process factors</dt>
               <dd className="nb-stat-value">{catalog.totalRecords}</dd>
               <dd className="nb-stat-note">Pinned to source release {catalog.sourceVersion}</dd>
             </div>
-            <div className="nb-stat nb-tone-pink">
+            <div className="nb-stat nb-tone-warm">
               <dt>Selectable factor groups</dt>
               <dd className="nb-stat-value">{catalog.groups}</dd>
               <dd className="nb-stat-note">Families and reference units kept as published</dd>
             </div>
-            <div className="nb-stat nb-tone-lilac">
+            <div className="nb-stat nb-tone-sage">
               <dt>EF 3.1 indicators per row</dt>
               <dd className="nb-stat-value">16</dd>
               <dd className="nb-stat-note">Shown separately for every process row</dd>

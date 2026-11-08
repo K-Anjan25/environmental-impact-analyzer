@@ -173,7 +173,7 @@ function ResultHeadline({ report, subtotalsHidden, blockers }: { report: ResultR
             <strong key={report.efPointsTotal} className="metric-value" aria-live="polite" aria-atomic="true">{formatCompact(report.efPointsTotal)}</strong>
           )}
         </div>
-        <div className="result-stat result-stat-lilac">
+        <div className="result-stat result-stat-sage">
           <span>Processes</span>
           <strong key={report.processCount} className="metric-value">{report.processCount}</strong>
         </div>

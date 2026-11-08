@@ -16,12 +16,10 @@
   --nb-paper: var(--solar-bg);
   --nb-white: var(--solar-surface);
   --nb-cream: var(--solar-surface-soft);
-  --nb-yellow: var(--solar-gold);
-  --nb-pink: #F5E8E3;
-  --nb-green: var(--solar-emerald);
-  --nb-lilac: var(--solar-emerald-soft);
-  --nb-blue: var(--solar-emerald-soft);
-  --nb-orange: var(--solar-gold);
+  --nb-gold: var(--solar-gold);
+  --nb-warm-soft: #F5E8E3;
+  --nb-green-soft: var(--solar-emerald-soft);
+  --nb-emerald-soft: var(--solar-emerald-soft);
   --nb-ink: var(--solar-forest);
   --nb-border: 1px solid var(--solar-line);
   --nb-shadow: var(--solar-shadow);
@@ -62,12 +60,10 @@ body:has(.nb-home) {
   --nb-paper: var(--solar-bg);
   --nb-cream: var(--solar-surface-soft);
   --nb-ink: var(--solar-forest);
-  --nb-yellow: var(--solar-gold);
-  --nb-pink: #F5E8E3;
-  --nb-green: var(--solar-emerald);
-  --nb-lilac: var(--solar-emerald-soft);
-  --nb-blue: var(--solar-emerald-soft);
-  --nb-orange: var(--solar-gold);
+  --nb-gold: var(--solar-gold);
+  --nb-warm-soft: #F5E8E3;
+  --nb-green-soft: var(--solar-emerald-soft);
+  --nb-emerald-soft: var(--solar-emerald-soft);
   --nb-white: var(--solar-surface);
   --nb-border: 1px solid var(--solar-line);
   --nb-shadow: var(--solar-shadow);
@@ -98,6 +94,7 @@ body :focus-visible { outline: 3px solid var(--solar-gold) !important; outline-o
 body .site-layout,
 body .site-main,
 body .site-layout-landing,
+html body:has(.nb-home) .site-layout-landing,
 body .calculator-page,
 body .marketing,
 body .blog-page,
@@ -137,8 +134,12 @@ body .site-menu-panel {
 }
 body .site-menu-list a[aria-current="page"] { border-left: 3px solid var(--solar-emerald) !important; background: var(--solar-emerald-soft) !important; color: var(--solar-forest) !important; }
 body .landing-footer { background: var(--solar-forest) !important; color: #FFFFFF !important; border-top: 0 !important; }
+html body:has(.nb-home) .landing-footer,
+html body .site-layout-landing .landing-footer { background: var(--solar-forest) !important; color: #FFFFFF !important; border-top: 0 !important; }
 body .landing-footer :is(a, p, span, h2, h3, .site-brand, .site-brand span) { color: #FFFFFF !important; }
 body .landing-footer a:hover { color: var(--solar-gold) !important; }
+html body .landing-footer-base { color: rgba(255, 255, 255, 0.78) !important; }
+html body .landing-footer :is(a, button):focus-visible { outline-color: var(--solar-gold) !important; }
 
 /* Rounded, responsive action controls */
 body :is(button, .MuiButton-root, .landing-button, .nb-button, .landing-cta, .site-cta, .sticky-cta, .load-more, .stage-action, .admin-secondary, .admin-danger) {
@@ -280,7 +281,7 @@ body .table-scroll {
 body .MuiPaper-root.MuiAlert-root,
 body .MuiAlert-root { border-radius: 14px !important; border: 1px solid var(--solar-line) !important; box-shadow: none !important; }
 body .MuiAlert-standardSuccess { background: var(--solar-emerald-soft) !important; color: var(--solar-forest) !important; }
-body .MuiAlert-standardInfo { background: #EDF4F8 !important; color: #23465A !important; }
+body .MuiAlert-standardInfo { background: var(--solar-emerald-soft) !important; color: var(--solar-forest) !important; }
 body .MuiAlert-standardWarning { background: var(--solar-gold-soft) !important; color: #574510 !important; }
 body .MuiAlert-standardError { background: #FCEDEC !important; color: #762E30 !important; }
 body .MuiChip-root { border: 1px solid var(--solar-line) !important; background: var(--solar-emerald-soft) !important; color: var(--solar-forest) !important; }
@@ -438,7 +439,7 @@ body .calculator-page .result-stat {
   transition: background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
 }
 body .calculator-page .result-stat-yellow { background: var(--solar-gold-soft) !important; border-color: #F1D98D; }
-body .calculator-page .result-stat-lilac { background: var(--solar-emerald-soft) !important; border-color: #C9DCCF; }
+body .calculator-page .result-stat-sage { background: var(--solar-emerald-soft) !important; border-color: #C9DCCF; }
 body .calculator-page .result-stat-emerald { background: #F0F6F1 !important; border-color: #C9DCCF; }
 body .calculator-page .result-stat :is(span, strong, small) { color: var(--solar-forest) !important; }
 body .calculator-page .result-stat strong { font-size: clamp(1.35rem, 2.6vw, 2rem); font-variant-numeric: tabular-nums; }
@@ -526,9 +527,21 @@ body:has(.nb-home) .nb-home .nb-stat:nth-child(5n+1) { background: #FFFFFF !impo
 body:has(.nb-home) .nb-home .nb-stat:nth-child(5n+2) { background: var(--solar-gold-soft) !important; }
 body:has(.nb-home) .nb-home .nb-stat:nth-child(5n+3) { background: var(--solar-emerald-soft) !important; }
 body:has(.nb-home) .nb-home .nb-stat:nth-child(5n+4) { background: #F0F6F1 !important; }
+body:has(.nb-home) .nb-home .nb-case:nth-child(3n+1) { background: #FFFFFF !important; }
+body:has(.nb-home) .nb-home .nb-case:nth-child(3n+2) { background: var(--solar-emerald-soft) !important; }
+body:has(.nb-home) .nb-home .nb-case:nth-child(3n+3) { background: var(--solar-gold-soft) !important; }
+body:has(.nb-home) .nb-home .nb-panel-selection { background: var(--solar-gold-soft) !important; }
+body:has(.nb-home) .nb-home .nb-panel-boundary { background: var(--solar-surface-soft) !important; }
+body:has(.nb-home) .nb-home .nb-cta { background: linear-gradient(135deg, #FFFFFF, var(--solar-emerald-soft)) !important; }
 body:has(.nb-home) .nb-home .nb-stat :is(h2, h3, p, strong, span) { color: var(--solar-text) !important; }
 body:has(.nb-home) .nb-home .nb-tag { border: 1px solid #EBD58E; border-radius: 999px; background: var(--solar-gold-soft); box-shadow: none; color: var(--solar-forest); }
-body:has(.nb-home) .nb-home .nb-trust li { border: 1px solid var(--solar-line); border-radius: 12px; background: #FFFFFF; color: var(--solar-forest); }
+body:has(.nb-home) .nb-home .nb-trust li { border: 1px solid var(--solar-line); border-radius: 14px; background: #FFFFFF; color: var(--solar-forest); }
+body:has(.nb-home) .nb-home .nb-spec-grid { overflow: hidden; border: 1px solid var(--solar-line) !important; border-radius: 18px; background: #FFFFFF; }
+body:has(.nb-home) .nb-home .nb-mock-row,
+body:has(.nb-home) .nb-home .nb-mock-check,
+body:has(.nb-home) .nb-home .nb-mock-lock,
+body:has(.nb-home) .nb-home .nb-mock-total { border: 1px solid var(--solar-line) !important; border-radius: 14px !important; box-shadow: var(--solar-shadow-sm) !important; }
+body:has(.nb-home) .nb-home .nb-mock-total { background: var(--solar-forest) !important; color: #FFFFFF !important; }
 body:has(.nb-home) .nb-home .nb-spec-head { border-radius: 19px 19px 0 0; background: var(--solar-forest); color: #FFFFFF; }
 body:has(.nb-home) .nb-home .nb-spec-head :is(span, strong, small) { color: #FFFFFF; }
 body .blog-tabs a,
