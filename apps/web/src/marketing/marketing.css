@@ -47,7 +47,7 @@
 .site-layout-landing :is(a, button, input, select, textarea, [tabindex], summary):focus-visible {
   outline: 2px solid var(--accent-primary); outline-offset: 2px;
 }
-.site-layout-landing .landing-footer :is(a, button):focus-visible { outline-color: var(--solar-gold); }
+.site-layout-landing .landing-footer :is(a, button):focus-visible { outline-color: var(--solar-forest); }
 
 .marketing { max-width: 1180px; margin: 0 auto; padding: 0 24px; color: var(--ink); }
 .marketing .section { padding: clamp(3rem, 6vw, 6rem) 0; }
@@ -160,18 +160,18 @@
 .contact-options strong { color: var(--ink); }
 .contact-options span { color: var(--muted); font-size: 14px; line-height: 1.5; }
 
-/* Footer: charcoal, so it closes the warm page without a second accent colour */
-.landing-footer { background: var(--solar-forest); color: #FFFFFF; margin-top: 0; padding: 56px 0 0; }
+/* Light footer repeats the page canvas; green is reserved for readable links and brand details. */
+.landing-footer { background: var(--solar-bg); color: var(--solar-text); border-top: 1px solid var(--solar-line); margin-top: 0; padding: 48px 0 0; }
 .landing-footer-grid { max-width: 1180px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 32px; }
-.landing-footer h3 { margin: 0 0 12px; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; }
+.landing-footer h3 { margin: 0 0 12px; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--solar-forest); }
 .landing-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
-.landing-footer a { color: #F4F7F6; text-decoration: none; }
-.landing-footer a:hover { color: #fff; text-decoration: underline; }
-.landing-footer .site-brand { color: #fff; }
-.landing-footer .site-brand span { color: #fff; }
+.landing-footer a { color: var(--solar-emerald); text-decoration: none; }
+.landing-footer a:hover { color: var(--solar-forest); text-decoration: underline; }
+.landing-footer .site-brand { color: var(--solar-forest); }
+.landing-footer .site-brand span { color: var(--solar-forest); }
 .footer-brand-col p { margin: 14px 0; font-size: 14px; line-height: 1.6; max-width: 36ch; }
 .social { display: flex; gap: 14px; }
-.landing-footer-base { max-width: 1180px; margin: 40px auto 0; padding: 18px 24px 28px; border-top: 1px solid rgba(255, 255, 255, 0.14); font-size: 13px; color: #C9CFC4; }
+.landing-footer-base { max-width: 1180px; margin: 40px auto 0; padding: 18px 24px 28px; border-top: 1px solid var(--solar-line); font-size: 13px; color: var(--solar-muted); }
 
 /* Floating controls */
 .sticky-cta {

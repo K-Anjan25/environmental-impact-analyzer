@@ -21,7 +21,10 @@ describe('shared Solarpunk visual system', () => {
     expect(solar).toContain('--solar-emerald: #2D6A4F;');
     expect(solar).toContain('--solar-gold: #FFB703;');
     expect(solar).toContain('html body:has(.nb-home) .landing-footer');
-    expect(solar).toContain('background: var(--solar-forest) !important');
+    expect(solar).toContain('background: var(--solar-bg) !important');
+    expect(solar).toContain('border-top: 1px solid var(--solar-line) !important;');
+    expect(solar).toContain('body .landing-footer a { color: var(--solar-emerald) !important; }');
+    expect(legacyLayers).not.toMatch(/(?:^|})[^{}]*\.landing-footer[^{}]*\{[^}]*background:\s*var\(--solar-forest\)/s);
   });
 
   it('does not reintroduce the retired purple, neon-yellow, or black-brutalist palette', () => {

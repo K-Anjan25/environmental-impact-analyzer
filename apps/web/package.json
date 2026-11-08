@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "predev": "node scripts/build-legal-pages.mjs",
-    "dev": "vite",
+    "dev": "node scripts/dev.mjs",
     "prebuild": "node scripts/build-legal-pages.mjs",
     "build": "tsc --noEmit && vite build",
     "test": "vitest run"

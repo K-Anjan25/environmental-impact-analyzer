@@ -133,13 +133,19 @@ body .site-menu-panel {
   backdrop-filter: blur(16px);
 }
 body .site-menu-list a[aria-current="page"] { border-left: 3px solid var(--solar-emerald) !important; background: var(--solar-emerald-soft) !important; color: var(--solar-forest) !important; }
-body .landing-footer { background: var(--solar-forest) !important; color: #FFFFFF !important; border-top: 0 !important; }
+/* Keep the landing footer on the warm canvas; prior high-specificity forest rules caused a dark footer. */
+body .landing-footer,
 html body:has(.nb-home) .landing-footer,
-html body .site-layout-landing .landing-footer { background: var(--solar-forest) !important; color: #FFFFFF !important; border-top: 0 !important; }
-body .landing-footer :is(a, p, span, h2, h3, .site-brand, .site-brand span) { color: #FFFFFF !important; }
-body .landing-footer a:hover { color: var(--solar-gold) !important; }
-html body .landing-footer-base { color: rgba(255, 255, 255, 0.78) !important; }
-html body .landing-footer :is(a, button):focus-visible { outline-color: var(--solar-gold) !important; }
+html body .site-layout-landing .landing-footer {
+  background: var(--solar-bg) !important;
+  color: var(--solar-text) !important;
+  border-top: 1px solid var(--solar-line) !important;
+}
+body .landing-footer :is(p, span, h2, h3, .site-brand, .site-brand span) { color: var(--solar-forest) !important; }
+body .landing-footer a { color: var(--solar-emerald) !important; }
+body .landing-footer a:hover { color: var(--solar-forest) !important; }
+html body .landing-footer-base { color: var(--solar-muted) !important; }
+html body .landing-footer :is(a, button):focus-visible { outline-color: var(--solar-forest) !important; }
 
 /* Rounded, responsive action controls */
 body :is(button, .MuiButton-root, .landing-button, .nb-button, .landing-cta, .site-cta, .sticky-cta, .load-more, .stage-action, .admin-secondary, .admin-danger) {

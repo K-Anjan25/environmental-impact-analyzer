@@ -6,19 +6,20 @@
 
 ## Run locally
 
-Start the API in one terminal:
+Install the API and web dependencies once:
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate
-python -m pip install -r services/api/requirements-dev.txt
-cd services/api
-../../.venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000
+.venv/bin/python -m pip install -r services/api/requirements-dev.txt
+npm ci --prefix apps/web
 ```
 
-Start the website in another terminal:
+On Windows, use `.venv\\Scripts\\python.exe` instead of `.venv/bin/python`.
+
+Start the app from the repository root:
 
 ```bash
-npm ci --prefix apps/web
-npm run dev --prefix apps/web -- --host 0.0.0.0
+npm run dev --prefix apps/web
 ```
+
+The development command starts the API on `127.0.0.1:8000`, waits for its health check, then starts Vite. It shuts down the API when Vite exits. If an API is already healthy on port 8000, it reuses it. If Python dependencies are missing or the API fails to start, it prints an actionable error and does not start Vite, avoiding repeated proxy failures. To choose a Python interpreter, set `PYTHON` before running the command.

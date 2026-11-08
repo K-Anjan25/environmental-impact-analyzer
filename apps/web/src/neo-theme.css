@@ -59,9 +59,10 @@ a { color: var(--solar-forest); text-decoration-thickness: 2px; text-underline-o
   backdrop-filter: none !important;
 }
 .site-brand, .site-brand span { color: var(--solar-forest) !important; font-weight: 900; }
-.landing-footer { background: var(--solar-forest) !important; color: #ffffff; border-top: var(--nb-border); }
-.landing-footer a, .landing-footer-base { color: #ffffff !important; }
-.landing-footer :is(a, button):focus-visible { outline-color: var(--nb-gold); }
+.landing-footer { background: var(--solar-bg) !important; color: var(--solar-text) !important; border-top: 1px solid var(--solar-line) !important; }
+.landing-footer a { color: var(--solar-emerald) !important; }
+.landing-footer-base { color: var(--solar-muted) !important; }
+.landing-footer :is(a, button):focus-visible { outline-color: var(--solar-forest) !important; }
 
 /* ----- Button language: one raised hero action, one compact outline, one quiet text action ----- */
 .landing-button, .MuiButton-root {
@@ -353,12 +354,12 @@ summary {
 
 .landing-cta { box-shadow: var(--solar-shadow-sm) !important; }
 
-/* Footer brand mark remains legible against the forest surface. */
+/* Footer brand mark stays anchored in forest green on the warm-light surface. */
 .landing-footer .site-brand,
 .landing-footer .site-brand span,
 .landing-footer .footer-brand-col .site-brand span {
-  color: #ffffff !important;
-  font-weight: 900;
+  color: var(--solar-forest) !important;
+  font-weight: 750;
 }
 .landing-footer .site-brand img { filter: none; }
 
@@ -467,7 +468,7 @@ summary {
   font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: 20px; letter-spacing: -0.045em; white-space: nowrap;
 }
 .site-topbar .site-brand img, .landing-footer .site-brand img { width: 34px; height: 34px; }
-.landing-footer .site-brand, .landing-footer .site-brand span { color: #fff !important; }
+.landing-footer .site-brand, .landing-footer .site-brand span { color: var(--solar-forest) !important; }
 .site-topbar .site-menu { margin-left: auto; }
 .site-nav { display: flex; gap: 6px; }
 .site-nav a {
@@ -968,7 +969,7 @@ summary {
 .landing-footer a:focus-visible {
   text-decoration: none !important;
   transform: none !important;
-  color: var(--nb-gold) !important;
+  color: var(--solar-forest) !important;
 }
 .landing-footer a { transition: color 150ms ease; }
 

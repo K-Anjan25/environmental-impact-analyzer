@@ -35,14 +35,14 @@ body:has(.nb-home) .site-cta {
 }
 body:has(.nb-home) .site-cta:hover { box-shadow: var(--nb-shadow-primary-hover); }
 body:has(.nb-home) .site-cta:active { box-shadow: var(--nb-shadow-primary-pressed); }
-body:has(.nb-home) .landing-footer { background: var(--solar-forest) !important; color: #fff; border-top: var(--nb-border); }
+body:has(.nb-home) .landing-footer { background: var(--solar-bg) !important; color: var(--solar-text) !important; border-top: 1px solid var(--solar-line) !important; }
 
 /* Keyboard focus uses the deep forest color for reliable contrast on every surface. */
 .nb-home :is(a, button):focus-visible,
 body:has(.nb-home) .site-topbar :is(a, button):focus-visible {
   outline: 3px solid var(--solar-forest); outline-offset: 3px;
 }
-body:has(.nb-home) .landing-footer :is(a, button):focus-visible { outline-color: var(--nb-gold); }
+body:has(.nb-home) .landing-footer :is(a, button):focus-visible { outline-color: var(--solar-forest) !important; }
 
 .nb-home {
   max-width: 1320px;

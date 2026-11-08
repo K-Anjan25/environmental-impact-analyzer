@@ -60,7 +60,7 @@ jobs:
               legal_pages = {
                   "/legal/privacy.html": "Privacy notice",
                   "/legal/terms.html": "Terms of use",
-                  "/legal/data-sources.html": "Open-data source record",
+                  "/legal/data-sources.html": "Data sources and scope",
                   "/legal/source-record.html": "Carbonfact source record",
               }
               for route, marker in legal_pages.items():
