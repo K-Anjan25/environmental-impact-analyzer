@@ -823,19 +823,12 @@ summary {
   border: 2px solid var(--nb-paper);
 }
 
-/* Hover on top navigation and footer links: a small lift, no text underline.
-   The current page keeps its bar, so a hovered current link shows one mark, not two. */
-.site-nav a {
-  transition: transform 160ms ease;
-}
+/* Navigation feedback stays stationary; hover and focus only change color/background. */
 .site-nav a:hover,
 .site-nav a:focus-visible,
 .landing-footer a:hover,
 .landing-footer a:focus-visible {
   text-decoration: none !important;
-}
-.site-nav a:hover {
-  transform: translateY(-2px);
 }
 @media (prefers-reduced-motion: reduce) {
   .site-nav a, .landing-footer a, .site-cta, .MuiButton-root, .MuiIconButton-root { transition: none; }
