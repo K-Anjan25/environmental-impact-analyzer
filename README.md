@@ -22,4 +22,4 @@ Start the app from the repository root:
 npm run dev --prefix apps/web
 ```
 
-The development command starts the API on `127.0.0.1:8000`, waits for its health check, then starts Vite. It shuts down the API when Vite exits. If an API is already healthy on port 8000, it reuses it. If Python dependencies are missing or the API fails to start, it prints an actionable error and does not start Vite, avoiding repeated proxy failures. To choose a Python interpreter, set `PYTHON` before running the command.
+The development command starts the API on `127.0.0.1:8000`, waits for its health check, then starts Vite. It shuts down an API it started when Vite exits. The Vite config also performs the same API health check and startup, so direct `vite` launches cannot accept browser traffic while the API is unavailable. If an API is already healthy on port 8000, it is reused. If Python dependencies are missing or the API fails to start, Vite exits with an actionable error instead of serving a site that repeatedly logs proxy refusals. To choose a Python interpreter, set `PYTHON` before running the command.

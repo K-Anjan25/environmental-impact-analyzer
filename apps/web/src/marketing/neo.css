@@ -5,7 +5,7 @@ body:has(.nb-home) {
   --nb-cream: var(--solar-emerald-soft);
   --nb-ink: var(--solar-forest);
   --nb-gold: var(--solar-gold);
-  --nb-warm-soft: #F5E8E3;
+  --nb-warm-soft: var(--solar-gold-soft);
   --nb-green-soft: var(--solar-emerald-soft);
   --nb-emerald-soft: var(--solar-emerald-soft);
   --nb-white: #FFFFFF;

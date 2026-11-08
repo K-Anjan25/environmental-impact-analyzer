@@ -4,7 +4,7 @@
   --nb-white: var(--solar-surface);
   --nb-cream: var(--solar-surface-soft);
   --nb-gold: var(--solar-gold);
-  --nb-warm-soft: #F5E8E3;
+  --nb-warm-soft: var(--solar-gold-soft);
   --nb-green-soft: var(--solar-emerald-soft);
   --nb-emerald-soft: var(--solar-emerald-soft);
   --nb-gold-soft: var(--solar-gold-soft);
@@ -824,8 +824,7 @@ summary {
 
 /* Hover on top navigation and footer links: a small lift, no text underline.
    The current page keeps its bar, so a hovered current link shows one mark, not two. */
-.site-nav a,
-.landing-footer a {
+.site-nav a {
   transition: transform 160ms ease;
 }
 .site-nav a:hover,
@@ -834,8 +833,7 @@ summary {
 .landing-footer a:focus-visible {
   text-decoration: none !important;
 }
-.site-nav a:hover,
-.landing-footer a:hover {
+.site-nav a:hover {
   transform: translateY(-2px);
 }
 @media (prefers-reduced-motion: reduce) {

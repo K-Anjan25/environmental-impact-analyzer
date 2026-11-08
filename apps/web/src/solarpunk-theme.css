@@ -17,7 +17,7 @@
   --nb-white: var(--solar-surface);
   --nb-cream: var(--solar-surface-soft);
   --nb-gold: var(--solar-gold);
-  --nb-warm-soft: #F5E8E3;
+  --nb-warm-soft: var(--solar-gold-soft);
   --nb-green-soft: var(--solar-emerald-soft);
   --nb-emerald-soft: var(--solar-emerald-soft);
   --nb-ink: var(--solar-forest);
@@ -50,8 +50,14 @@
   --citrus: var(--solar-gold);
   --sand: var(--solar-bg);
   --soft-green: var(--solar-emerald-soft);
-  --radius-lg: 22px;
-  --radius-sm: 12px;
+  --radius-field: 12px;
+  --radius-nested: 14px;
+  --radius-control: 16px;
+  --radius-card: 20px;
+  --radius-feature: 24px;
+  --radius-pill: 999px;
+  --radius-lg: var(--radius-card);
+  --radius-sm: var(--radius-field);
   color-scheme: light;
 }
 
@@ -61,7 +67,7 @@ body:has(.nb-home) {
   --nb-cream: var(--solar-surface-soft);
   --nb-ink: var(--solar-forest);
   --nb-gold: var(--solar-gold);
-  --nb-warm-soft: #F5E8E3;
+  --nb-warm-soft: var(--solar-gold-soft);
   --nb-green-soft: var(--solar-emerald-soft);
   --nb-emerald-soft: var(--solar-emerald-soft);
   --nb-white: var(--solar-surface);
@@ -610,16 +616,40 @@ body .step-number { border: 1px solid var(--solar-line) !important; border-radiu
 
 /* Final shape guard: counter older, higher-specificity component rules on every route. */
 body :is(button, .MuiButton-root, .MuiButtonBase-root, .landing-button, .nb-button, .landing-cta, .site-cta, .sticky-cta, .load-more, .stage-action, .admin-secondary, .admin-danger) {
-  border-radius: 16px !important;
+  border-radius: var(--radius-control) !important;
 }
 body .site-nav a,
 body .site-nav a[aria-current="page"],
 body .site-nav a:hover,
 body .site-nav a:focus-visible,
-body .blog-tabs a { border-radius: 999px !important; }
+body .blog-tabs a { border-radius: var(--radius-pill) !important; }
 body .MuiIconButton-root:not(.site-menu-button),
 body .carousel-dot,
 body .post-pages button,
 body .to-top,
 body .calc-remove { border-radius: 50% !important; }
-body .site-menu-button.MuiIconButton-root { border-radius: 16px !important; }
+body .site-menu-button.MuiIconButton-root { border-radius: var(--radius-control) !important; }
+
+
+/* One geometry scale across marketing, calculator, editorial, legal, and admin surfaces. */
+body :is(.form-card.MuiPaper-root, .result-card.MuiPaper-root, .calc-card.MuiPaper-root, .estimator-card.MuiPaper-root, .result-panel.MuiPaper-root, .post-card, .post-figure, .admin-form, .admin-list-item, .contact-form, .faq-item.MuiAccordion-root, .site-menu-panel, .carousel-slide, .step-item, .nb-spec, .nb-spec-grid, .nb-stat, .nb-feature-panel, .nb-case, .nb-latest-item, .nb-use-card) {
+  border-radius: var(--radius-card) !important;
+}
+body :is(.nb-hero, .nb-cta, .calculator-page .page-heading, .contact-hero, .landscape-scene) {
+  border-radius: var(--radius-feature) !important;
+}
+body :is(input:not([type="button"]):not([type="submit"]):not([type="reset"]), select, textarea, .MuiOutlinedInput-root) {
+  border-radius: var(--radius-field) !important;
+}
+body :is(.product-input-workspace, .selected-process, .factor-detail-card, .product-input-result-context, .calc-material-row, .product-input-item, .factor-suggestion-card, .selected-process-summary, .product-input-use-review, .bom-mass-assessment, .result-scope-note, .product-boundary, .ghg-inputs, .stage-coverage-item, .process-impact-card, .indicator-disclosure, .result-details, .summary-table-wrap, .indicator-table-wrap, .ef-score-card, .contact-options li, .landscape-glyph, .MuiAlert-root) {
+  border-radius: var(--radius-nested) !important;
+}
+body :is(.site-nav a, .blog-tabs a, .nb-tag, .nb-trust li, .step-required-chip, .step-required-tag, .indicator-code, .result-overline) {
+  border-radius: var(--radius-pill) !important;
+}
+body :is(.MuiIconButton-root:not(.site-menu-button), .carousel-dot, .post-pages button, .to-top, .calc-remove, .process-impact-index, .live-preview-indicator, .privacy-pill .glow-dot, .step-number) {
+  border-radius: 50% !important;
+}
+body:has(.nb-home) .nb-home .nb-spec-head {
+  border-radius: var(--radius-card) var(--radius-card) 0 0 !important;
+}
